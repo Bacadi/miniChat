@@ -1,0 +1,9 @@
+root {
+    --bodybg: #EE55D9;
+    --bg: #FF9AED;
+    --border: 4px solid #FF0000;
+    --altbg: #FF7BE7;
+    --altborder: 2px solid #AA17FF;
+    --infobg: #FFB2FE;
+    --normradius: 50px;
+}
