@@ -1,4 +1,4 @@
-root {
+:root {
     --bodybg: #EE55D9;
     --bg: #FF9AED;
     --border: 4px solid #FF0000;
@@ -6,4 +6,99 @@ root {
     --altborder: 2px solid #AA17FF;
     --infobg: #FFB2FE;
     --normradius: 50px;
+}
+
+body {
+    background-color: var(--bodybg);
+    overflow: hidden;
+}
+
+.basebloc {
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--normradius);
+}
+
+.smlbloc {
+    background-color: var(--altbg);
+    border: var(--altborder);
+    border-radius: var(--normradius);
+}
+
+.info {
+    background-color: var(--infobg);
+    border-radius: 100px;
+    border: none;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header div {
+    width: 800px;
+    height: 70px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+main div {
+    height: 800px;
+    margin-top: 20px;
+}
+
+.chat {
+    width: 1200px;
+}
+
+.userslist {
+    width: 250px;
+}
+
+form {
+    position:fixed;
+    width: 800px;
+    place-self: center;
+    bottom: 8%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input {
+    border: none;
+    width: 350px;
+    height: 75%;
+    background-color: transparent;
+    color: black;
+}
+
+input {
+    background-color: #FFB2FE;
+}
+
+button {
+    border:none;
+    background-color: #AA17FF;
+    color: white;
+    font-size: 2em;
+    border: 1px solid #AA17FF;
+    border-radius: 100px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    font-size: 2.1em;
+    background-color: #7511b0;
+    border: 1px solid white;
 }
