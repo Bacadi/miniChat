@@ -30,17 +30,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Chat</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <form action="" method="post">
-        <input id="username" name="username" reuired placeholder="Pseudo" value="<?= htmlspecialchars($username ?? '') ?>">
-        <input id="message" name="message" required placeholder="Ecrire..." value="<?= htmlspecialchars($message ?? '') ?>">
-        <button type="submit">></button>
-    </form>
+    <header>
+        <h1>Le Mini Chat</h1>
+    </header>
+    <main>
+        <div class="chat">
+
+
+
+            <form action="" method="post">
+                <input id="username" name="username" reuired placeholder="Pseudo"
+                    value="<?= htmlspecialchars($username ?? '') ?>">
+                <input id="message" name="message" required placeholder="Ecrire..."
+                    value="<?= htmlspecialchars($message ?? '') ?>">
+                <button type="submit">></button>
+            </form>
+        </div>
+        <div class="userslist">
+
+        </div>
+
+    </main>
+
 </body>
+
 </html>
