@@ -8,18 +8,22 @@
     --normradius: 50px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--bodybg);
     overflow: hidden;
 }
 
-.basebloc {
+.baseblock {
     background-color: var(--bg);
     border: var(--border);
     border-radius: var(--normradius);
 }
 
-.smlbloc {
+.smlblock {
     background-color: var(--altbg);
     border: var(--altborder);
     border-radius: var(--normradius);
@@ -43,6 +47,11 @@ header div {
     margin-bottom: 10px;
 }
 
+h1 {
+    margin: 0;
+    line-height: 62px;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -56,49 +65,101 @@ main div {
 
 .chat {
     width: 1200px;
+    padding: 12px;
+    overflow-y: auto;
 }
 
 .userslist {
     width: 250px;
+    padding: 12px;
+    overflow-y: auto;
 }
 
+/* Form */
 form {
-    position:fixed;
+    position: fixed;
+    left: calc(50% - 135px);
+    transform: translateX(-50%);
     width: 800px;
-    place-self: center;
-    bottom: 8%;
     height: 50px;
+    bottom: 8%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-input {
+form input {
     border: none;
     width: 350px;
     height: 75%;
-    background-color: transparent;
+    padding: 0 20px;
+    background-color: var(--infobg);
     color: black;
 }
 
-input {
-    background-color: #FFB2FE;
-}
-
-button {
-    border:none;
+form button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #AA17FF;
     background-color: #AA17FF;
     color: white;
-    font-size: 2em;
-    border: 1px solid #AA17FF;
+    font-size: 1.2em;
     border-radius: 100px;
     transition: all 0.2s ease;
 }
 
-button:hover {
+form button:hover {
     cursor: pointer;
     transform: scale(1.05);
-    font-size: 2.1em;
+    font-size: 1.3em;
     background-color: #7511b0;
     border: 1px solid white;
+}
+
+
+/* Messages */
+.message {
+    width: 375px;
+    margin: 0 0 20px 0;
+}
+
+.message .info {
+    width: fit-content;
+    min-width: 250px;
+    margin: 0 0 6px 0;
+    padding: 5px 15px;
+}
+
+.message .smlblock {
+    margin: 0;
+    padding: 15px 20px;
+}
+
+.message.mine {
+    margin-left: auto;
+}
+
+.message.mine .info {
+    margin-left: auto;
+}
+
+.message:last-child {
+    margin-bottom: 90px;
+}
+
+/* Users list */
+.userslist .smlblock {
+    margin: 0 0 8px 0;
+    padding: 5px 15px;
+}
+
+/* Error message */
+.error {
+    position: fixed;
+    bottom: 2%;
+    width: 100%;
+    text-align: center;
+    color: #FF0000;
+    font-weight: bold;
 }

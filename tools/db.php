@@ -1,13 +1,13 @@
-<?php 
-$dsn = 'mysql:host=localhost;dbname=minichat';
-$user = "root";
+<?php
+$dsn = 'mysql:host=localhost;dbname=minichat;charset=utf8mb4';
+$user = 'root';
+$password = '';
 
 try {
-    $pdo = new PDO($dsn, $user, '');
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} 
-catch (PDOException $e) { 
-    die('Erreur de connexion à la base de données : ' . $e->getMessage());
+    $pdo = new PDO($dsn, $user, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    ]);
+} catch (PDOException $e) {
+    die('Database connection error: ' . $e->getMessage());
 }
-
-?>
