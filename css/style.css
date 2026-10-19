@@ -7,3 +7,23 @@ root {
     --infobg: #FFB2FE;
     --normradius: 50px;
 }
+
+body {
+    background-color: var(--bodybg);
+}
+
+.basebloc {
+    background-color: var(--bg);
+    border: var(--border);
+    border-radius: var(--normradius);
+}
+.smlbloc {
+    background-color: var(--altbg);
+    border: var(--altborder);
+    border-radius: var(--normradius);
+}
+
+.info {
+    background-color: var(--infobg);
+    border-radius: 100%;
+}

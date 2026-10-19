@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = trim($_POST['message'] ?? '');
     $datetime = date('Y-m-d H:i:s');
 
-    
+
 
     $sql = "INSERT INTO messages (datehour, content, username) VALUES (:username, :content, :datehour)";
 
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([
             ':username' => $username,
             ':content' => $message,
-            ':datehour' =>$datehour
+            ':datehour' => $datehour
         ]);
         header('Location: index.php');
         exit;
@@ -40,22 +40,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <header>
-        <h1>Le Mini Chat</h1>
+        <div class="basebloc">
+            <h1>Le Mini Chat</h1>
+        </div>
+        
     </header>
     <main>
-        <div class="chat">
+        <div class="chat basebloc">
 
 
 
-            <form action="" method="post">
-                <input id="username" name="username" reuired placeholder="Pseudo"
+            <form action="" method="post" class="smlbloc">
+                <input id="username" class="info" name="username" reuired placeholder="Pseudo"
                     value="<?= htmlspecialchars($username ?? '') ?>">
                 <input id="message" name="message" required placeholder="Ecrire..."
                     value="<?= htmlspecialchars($message ?? '') ?>">
                 <button type="submit">></button>
             </form>
         </div>
-        <div class="userslist">
+        <div class="userslist basebloc">
 
         </div>
 
